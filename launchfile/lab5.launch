@@ -1,0 +1,10 @@
+<launch>
+    <node name="stage" pkg="stage_ros" type="stageros" args="$(find lab5)/world/playground.world" />
+	<node name="aStar" pkg="lab5" type="a_star.py" output="screen" args= "$(find lab5)/world/map.txt"/>
+    
+    <arg name = "goalx" default="4.5" />
+    <param name="goalx" type="double" value="$(arg goalx)" />
+
+    <arg name = "goaly" default="9.0" />
+    <param name="goaly" type="double" value="$(arg goaly)"/>
+</launch>
